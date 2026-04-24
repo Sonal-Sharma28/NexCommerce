@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette (light subtle yellow -> orangish yellow) */
+  --color-amaranth-50: #fffbe6;
+  --color-amaranth-100: #fff3bf;
+  --color-amaranth-200: #ffe38f;
+  --color-amaranth-300: #ffd15a;
+  --color-amaranth-400: #ffbc2e;
+  --color-amaranth-500: #f59f00;
+  --color-amaranth-600: #e67700;
+  --color-amaranth-700: #cc5c00;
+  --color-amaranth-800: #a64b00;
+  --color-amaranth-900: #7a3800;
+  --color-amaranth-950: #3d1a00;
+
+  --animate-blob-drift: blobDrift 20s infinite alternate;
+  --animate-slide-up-soft: slideUpSoft 0.4s ease-out;
+
+  @keyframes blobDrift {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(10%, 10%) scale(1.1); }
+  }
+
+  @keyframes slideUpSoft {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  .nav-glass {
+    @apply backdrop-blur-[14px] bg-white/75 border-t border-white/25;
+  }
+  
+  .header-glass {
+    @apply backdrop-blur-[14px] bg-white/75 border-b border-white/15 sticky top-0 z-50;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+:root {
+  --background: #fffdf5;
+  --foreground: #18181b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0b0b0f;
+    --foreground: #f4f4f5;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-outfit), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-amaranth-200);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amaranth-300);
+}
