@@ -1,0 +1,15 @@
+{
+  "name": "nexcommerce",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:backend": "npm run dev --prefix apps/backend",
+    "dev:frontend": "npm run dev --prefix apps/frontend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "pwa:start": "concurrently \"npm run dev:backend\" \"npm run prod --prefix apps/frontend\"",
+    "install:all": "npm install && npm install --prefix apps/backend && npm install --prefix apps/frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
