@@ -87,7 +87,7 @@ export default function CartPage() {
 
                     <div className="flex-1 min-w-0">
                       <p className="font-black text-zinc-900 dark:text-white truncate">{i.name}</p>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">${Number(i.price).toFixed(2)}</p>
+                      <p className="text-sm text-zinc-600 dark:text-zinc-400">₹{Number(i.price).toFixed(2)}</p>
 
                       <div className="mt-3 flex items-center justify-between gap-3 flex-wrap">
                         <div className="inline-flex items-center gap-2 rounded-3xl border border-white/25 dark:border-white/10 bg-white/60 dark:bg-zinc-900/40 backdrop-blur-md p-1">
@@ -132,7 +132,7 @@ export default function CartPage() {
               <p className="font-black text-zinc-900 dark:text-white">Order summary</p>
               <div className="mt-4 flex items-center justify-between text-sm text-zinc-700 dark:text-zinc-300">
                 <span>Subtotal</span>
-                <span className="font-black text-zinc-900 dark:text-white">${formattedSubtotal}</span>
+                <span className="font-black text-zinc-900 dark:text-white">₹{formattedSubtotal}</span>
               </div>
               <p className="mt-1 text-xs text-zinc-500">Free delivery for COD orders.</p>
               <Button className="mt-6 w-full h-12 font-black" onClick={checkout} disabled={loading}>

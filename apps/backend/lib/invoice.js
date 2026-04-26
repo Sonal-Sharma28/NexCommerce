@@ -6,11 +6,11 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
-function formatMoney(amount, currency = "USD") {
+function formatMoney(amount, currency = "INR") {
   try {
-    return new Intl.NumberFormat("en-US", { style: "currency", currency }).format(amount);
+    return new Intl.NumberFormat("en-IN", { style: "currency", currency }).format(amount);
   } catch {
-    return `$${Number(amount).toFixed(2)}`;
+    return `₹${Number(amount).toFixed(2)}`;
   }
 }
 

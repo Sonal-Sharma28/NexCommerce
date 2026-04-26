@@ -175,12 +175,12 @@ export default function AdminDashboard() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label>Price ($)</Label>
+                  <Label>Price (₹)</Label>
                   <Input
                     type="number"
                     required
                     value={formData.price} onChange={(e) => setFormData({...formData, price: e.target.value})}
-                    placeholder="299.99"
+                    placeholder="9999"
                   />
                 </div>
               </div>
@@ -288,7 +288,7 @@ export default function AdminDashboard() {
                             {p.name}
                           </p>
                           <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
-                            {p.category || 'General'} • ${Number(p.price || 0).toFixed(2)} • Stock {Number(p.stock || 0)}
+                            {p.category || 'General'} • ₹{Number(p.price || 0).toFixed(2)} • Stock {Number(p.stock || 0)}
                           </p>
                         </div>
                         <div className="flex items-center gap-2">

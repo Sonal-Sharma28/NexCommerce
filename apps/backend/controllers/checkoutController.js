@@ -65,7 +65,7 @@ const createCheckoutSession = async (req, res) => {
     if (orderItems.length === 0) return res.status(400).json({ message: "No purchasable items" });
 
     const totals = {
-      currency: "usd",
+      currency: "inr",
       subtotal: orderItems.reduce((a, b) => a + b.price * b.qty, 0),
     };
 
